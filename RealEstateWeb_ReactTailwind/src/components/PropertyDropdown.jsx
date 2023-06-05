@@ -1,7 +1,3 @@
-import React from 'react';
-
-const PropertyDropdown = () => {
+export default function PropertyDropdown() {
   return <div>PropertyDropdown</div>;
-};
-
-export default PropertyDropdown;
+}
