@@ -9,7 +9,6 @@ import { HouseContext } from './HouseContext';
 
 export default function Search() {
   const { houses } = useContext(HouseContext);
-  console.log(houses);
 
   return (
     <div className='relative mx-auto flex max-w-[1170px] flex-col justify-between gap-4 rounded-lg bg-white px-[30px] py-6 lg:-top-4 lg:flex-row lg:gap-x-3 lg:bg-transparent lg:shadow-1 lg:backdrop-blur'>
