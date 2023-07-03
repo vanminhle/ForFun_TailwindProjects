@@ -39,6 +39,10 @@ export default function HouseContextProvider({ children }) {
     setProperties(uniqueProperties);
   }, []);
 
+  const handleClick = () => {
+    console.log('clicked');
+  };
+
   return (
     <HouseContext.Provider
       value={{
@@ -52,6 +56,7 @@ export default function HouseContextProvider({ children }) {
         setPrice,
         houses,
         loading,
+        handleClick,
       }}
     >
       {children}
