@@ -1,11 +1,15 @@
+import { Routes, Route } from 'react-router-dom';
 import { Header, Footer } from './components';
-import { Home } from './pages';
+import { Home, PropertyDetails } from './pages';
 
 const App = () => {
   return (
     <>
       <Header />
-      <Home />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/property/:id' element={<PropertyDetails />} />
+      </Routes>
       <Footer />
     </>
   );
