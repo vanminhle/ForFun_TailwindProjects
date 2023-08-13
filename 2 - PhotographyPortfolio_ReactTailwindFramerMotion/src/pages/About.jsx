@@ -1,3 +1,3 @@
 export default function About() {
-  return <div>About</div>;
+  return <section className='section bg-yellow-200'>About</section>;
 }
