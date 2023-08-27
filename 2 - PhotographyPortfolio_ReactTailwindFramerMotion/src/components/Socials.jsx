@@ -1,3 +1,3 @@
 export default function Socials() {
-  return <div>Socials</div>;
+  return <div></div>;
 }
