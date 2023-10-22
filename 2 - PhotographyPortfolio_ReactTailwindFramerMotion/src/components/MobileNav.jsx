@@ -26,7 +26,7 @@ export default function MobileNav() {
   return (
     <nav className='text-primary xl:hidden'>
       {/* nav open btn */}
-      <div onClick={() => setOpenMenu(true)} className='text-3xl cursor-pointer'>
+      <div onClick={() => setOpenMenu(true)} className='cursor-pointer text-3xl'>
         <CgMenuRight />
       </div>
       {/* menu */}
@@ -34,17 +34,20 @@ export default function MobileNav() {
         variants={menuVariants}
         initial='hidden'
         animate={openMenu ? 'show' : ''}
-        className='bg-white shadow-2xl w-full absolute top-0 right-0 max-w-xs h-screen z-20'
+        className='absolute right-0 top-0 z-20 h-screen w-full max-w-xs bg-white shadow-2xl'
       >
         {/* icon */}
         <div
           onClick={() => setOpenMenu(false)}
-          className='text-4xl absolute z-30 left-4 top-14 text-primary cursor-pointer'
+          className='absolute left-4 top-14 z-30 cursor-pointer text-4xl text-primary'
         >
           <IoMdClose />
         </div>
         {/* menu list */}
-        <ul className='h-full flex flex-col justify-center items-center gap-y-8 text-primary font-primary font-bold text-3xl'>
+        <ul
+          onClick={() => setOpenMenu(false)}
+          className='flex h-full flex-col items-center justify-center gap-y-8 font-primary text-3xl font-bold text-primary'
+        >
           <li>
             <Link to='/'>Home</Link>
           </li>

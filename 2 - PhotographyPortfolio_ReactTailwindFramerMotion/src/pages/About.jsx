@@ -31,7 +31,7 @@ export default function About() {
             className='z-10 flex flex-1 flex-col items-center justify-center pb-14 pt-36 lg:w-auto lg:items-start lg:pt-0'
           >
             <h1 className='h1'>About me</h1>
-            <p className='mb-12 max-w-sm'>
+            <p className='mb-12 max-w-xs'>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente, asperiores error
               <b>odio maiores</b>quos sunt nobis ratione ut debitis dolore, magnam fugiat suscipit.
               Inventore nostrum vitae mollitia dolor illo quos aperiam veritatis.

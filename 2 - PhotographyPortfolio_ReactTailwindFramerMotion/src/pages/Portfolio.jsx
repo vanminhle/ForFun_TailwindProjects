@@ -29,7 +29,7 @@ export default function Portfolio() {
             className='flex flex-col lg:items-start'
           >
             <div className='h1'>Portfolio</div>
-            <p className='mb-12 max-w-sm'>
+            <p className='mb-12 max-w-xs'>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente, asperiores error
               <b>odio maiores</b>quos sunt nobis ratione ut debitis dolore, magnam fugiat suscipit.
               Inventore nostrum vitae mollitia dolor illo quos aperiam veritatis.
