@@ -1,14 +1,28 @@
 import WomanImg from './../assets/img/contact/woman.png';
 
+import { motion } from 'framer-motion';
+
+import { transition1 } from '../transitions';
+
 export default function Contact() {
   return (
-    <section className='section bg-white'>
+    <motion.section
+      initial={{ opacity: 0, y: '100%' }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: '100%' }}
+      transition={transition1}
+      className='section bg-white'
+    >
       <div className='container mx-auto h-full'>
         <div className='flex h-full flex-col items-center justify-start gap-x-8 pt-36 text-center lg:flex-row lg:text-left'>
           {/* bg */}
-          <div className='absolute bottom-0 left-0 right-0 top-72 -z-10 hidden bg-[#eef7f9] lg:flex'>
-            bg
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: '100%' }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: '100%' }}
+            transition={transition1}
+            className='absolute bottom-0 left-0 right-0 top-96 -z-10 hidden bg-[#eef7f9] lg:flex'
+          ></motion.div>
           {/* text & form */}
           <div className='lg:pt-30 px-4 lg:flex-1'>
             <h1 className='h1'>Contact me</h1>
@@ -36,11 +50,17 @@ export default function Contact() {
             </form>
           </div>
           {/* image */}
-          <div className='lg:flex-1'>
+          <motion.div
+            initial={{ opacity: 0, y: '100%' }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: '100%' }}
+            transition={{ transition: transition1, duration: 1.5 }}
+            className='lg:flex-1'
+          >
             <img src={WomanImg} alt='' />
-          </div>
+          </motion.div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
