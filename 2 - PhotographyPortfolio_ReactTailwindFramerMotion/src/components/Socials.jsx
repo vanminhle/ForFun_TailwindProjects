@@ -1,8 +1,17 @@
 import { ImFacebook, ImTwitter, ImPinterest, ImInstagram, ImYoutube } from 'react-icons/im';
 
+import { useContext } from 'react';
+import { CursorContext } from '../context/CursorContext';
+
 export default function Socials() {
+  const { mouseEnterHandler, mouseLeaverHandler } = useContext(CursorContext);
+
   return (
-    <div className='hidden xl:flex ml-24'>
+    <div
+      onMouseEnter={mouseEnterHandler}
+      onMouseLeave={mouseLeaverHandler}
+      className='ml-24 hidden xl:flex'
+    >
       <ul className='flex gap-x-4'>
         <li>
           <a href='http://www.facebook.com' target='_blank' rel='noreferrer'>

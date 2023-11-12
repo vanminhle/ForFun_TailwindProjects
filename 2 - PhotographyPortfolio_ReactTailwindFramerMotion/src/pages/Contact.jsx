@@ -4,7 +4,12 @@ import { motion } from 'framer-motion';
 
 import { transition1 } from '../transitions';
 
+import { useContext } from 'react';
+import { CursorContext } from '../context/CursorContext';
+
 export default function Contact() {
+  const { mouseEnterHandler, mouseLeaverHandler } = useContext(CursorContext);
+
   return (
     <motion.section
       initial={{ opacity: 0, y: '100%' }}
@@ -24,7 +29,11 @@ export default function Contact() {
             className='absolute bottom-0 left-0 right-0 top-96 -z-10 hidden bg-[#eef7f9] lg:flex'
           ></motion.div>
           {/* text & form */}
-          <div className='lg:pt-30 px-4 lg:flex-1'>
+          <div
+            onMouseEnter={mouseEnterHandler}
+            onMouseLeave={mouseLeaverHandler}
+            className='lg:pt-30 px-4 lg:flex-1'
+          >
             <h1 className='h1'>Contact me</h1>
             <p className='mb-12'>I would love to get suggestions from you.</p>
             {/* form */}
@@ -51,6 +60,8 @@ export default function Contact() {
           </div>
           {/* image */}
           <motion.div
+            onMouseEnter={mouseEnterHandler}
+            onMouseLeave={mouseLeaverHandler}
             initial={{ opacity: 0, y: '100%' }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: '100%' }}

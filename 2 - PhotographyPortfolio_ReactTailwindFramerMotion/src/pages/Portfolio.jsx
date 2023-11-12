@@ -9,7 +9,12 @@ import { motion } from 'framer-motion';
 
 import { transition1 } from '../transitions';
 
+import { useContext } from 'react';
+import { CursorContext } from '../context/CursorContext';
+
 export default function Portfolio() {
+  const { mouseEnterHandler, mouseLeaverHandler } = useContext(CursorContext);
+
   return (
     <motion.section
       initial={{ opacity: 0, y: '100%' }}
@@ -22,6 +27,8 @@ export default function Portfolio() {
         <div className='flex h-full flex-col items-center justify-start gap-x-24 pb-8 pt-24 text-center lg:flex-row lg:pt-36 lg:text-left '>
           {/* text */}
           <motion.div
+            onMouseEnter={mouseEnterHandler}
+            onMouseLeave={mouseLeaverHandler}
             initial={{ opacity: 0, y: '-80%' }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: '-80%' }}
@@ -43,7 +50,11 @@ export default function Portfolio() {
             </Link>
           </motion.div>
           {/* images */}
-          <div className='grid grid-cols-2 lg:gap-2'>
+          <div
+            onMouseEnter={mouseEnterHandler}
+            onMouseLeave={mouseLeaverHandler}
+            className='grid grid-cols-2 lg:gap-2'
+          >
             <div className='h-[187px] max-w-[250px] overflow-hidden bg-accent lg:h-[220px] lg:max-w-[320px]'>
               <img
                 className='h-full object-cover transition-all duration-500 hover:scale-110 lg:h-[220px]'

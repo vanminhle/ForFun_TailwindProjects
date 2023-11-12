@@ -6,7 +6,12 @@ import { motion } from 'framer-motion';
 
 import { transition1 } from '../transitions';
 
+import { useContext } from 'react';
+import { CursorContext } from '../context/CursorContext';
+
 export default function Home() {
+  const { mouseEnterHandler, mouseLeaverHandler } = useContext(CursorContext);
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -24,6 +29,8 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: '-50%' }}
             transition={transition1}
+            onMouseEnter={mouseEnterHandler}
+            onMouseLeave={mouseLeaverHandler}
             className='z-10 flex w-full flex-col items-center justify-center pb-14 pt-36 lg:absolute lg:w-auto lg:items-start lg:pb-0 lg:pt-0'
           >
             <h1 className='h1'>
