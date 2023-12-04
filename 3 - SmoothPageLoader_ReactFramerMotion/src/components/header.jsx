@@ -2,7 +2,16 @@ import { motion } from 'framer-motion';
 
 export default function Header() {
   return (
-    <div className='header'>
+    <motion.div
+      initial={{ opacity: 0, y: -180 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        ease: 'easeInOut',
+        duration: 1,
+        delay: 0.6,
+      }}
+      className='header'
+    >
       <div className='header-inner'>
         <div className='logo'>Ollie</div>
         <nav className='nav'>
@@ -30,6 +39,6 @@ export default function Header() {
           <span></span>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
