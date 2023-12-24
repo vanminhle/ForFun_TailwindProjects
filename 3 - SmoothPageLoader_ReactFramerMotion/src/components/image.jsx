@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Image = ({ src, fallback, type = 'image/webp', alt }) => {
+export default function Image({ src, fallback, type = 'image/webp', alt }) {
   return (
     <picture>
       <source srcSet={src} type={type} />
@@ -8,5 +8,3 @@ const Image = ({ src, fallback, type = 'image/webp', alt }) => {
     </picture>
   );
 };
-
-export default Image;
