@@ -6,7 +6,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@app': path.resolve(__dirname, './src'),
-      '@pages': `${path.resolve(__dirname, './src/pages')}`,
+      '@pages': `${path.resolve(__dirname, './src/routes')}`,
     },
   },
   plugins: [react()],
