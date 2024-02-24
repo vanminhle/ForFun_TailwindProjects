@@ -7,16 +7,14 @@ const authorization = {
 	}
 };
 
-export async function load({ fetch }) {
+export async function load({ fetch, params }) {
 	const res = await fetch(
-		'https://api.themoviedb.org/3/movie/popular?language=en-US&page=1',
+		`https://api.themoviedb.org/3/movie/${params.id}?language=en-US`,
 		authorization
 	);
-	const data = await res.json();
+	const movieDetail = await res.json();
 
 	if (res.ok) {
-		return {
-			popular: data.results
-		};
+		return movieDetail;
 	}
 }
