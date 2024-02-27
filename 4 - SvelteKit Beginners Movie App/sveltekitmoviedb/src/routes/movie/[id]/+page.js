@@ -8,13 +8,13 @@ const authorization = {
 };
 
 export async function load({ fetch, params }) {
-	const res = await fetch(
+	const req = await fetch(
 		`https://api.themoviedb.org/3/movie/${params.id}?language=en-US`,
 		authorization
 	);
-	const movieDetail = await res.json();
+	const res = await req.json();
 
-	if (res.ok) {
-		return movieDetail;
+	if (req.ok) {
+		return res;
 	}
 }
