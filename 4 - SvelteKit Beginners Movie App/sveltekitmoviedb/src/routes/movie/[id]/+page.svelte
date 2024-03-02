@@ -19,4 +19,29 @@
   </div>
 </div>
 
-<!--[45:56]-->
+<style>
+    h1 {
+        padding: 1rem 0rem 2rem;
+    }
+
+    p {
+        padding: 1rem 0rem;
+    }
+
+    .img-container {
+        width: 100%;
+    }
+
+    img {
+        width: 100%;
+        border-radius: 1rem;
+    }
+
+    .movie-details {
+        margin: 2rem 20%;
+    }
+
+    span {
+        font-weight: bold;
+    }
+</style>
