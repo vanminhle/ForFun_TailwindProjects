@@ -1,0 +1,60 @@
+<script>
+  let inputValue = '';
+</script>
+
+<form class='search'>
+  <label for='search_movie'>Search Movies</label>
+  <input bind:value={inputValue} name='search_movie' type='text' />
+  <button>Search</button>
+  <h1>{inputValue}</h1>
+</form>
+
+<style>
+    .search {
+        position: relative;
+        width: 30%;
+        margin: 1rem;
+    }
+
+    button {
+        font-size: 0.7rem;
+        padding: 0rem 1rem;
+        background: rgb(96, 110, 201);
+        color: white;
+        font-weight: bold;
+        border: none;
+        position: absolute;
+        bottom: 50%;
+        right: 0;
+        transform: translate(0, 50%);
+        height: 100%;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        cursor: pointer;
+    }
+
+    input {
+        width: 100%;
+        border: none;
+        font-size: 1rem;
+        font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        outline: none;
+        color: rgb(255, 255, 255);
+        transition: background 0.75s ease-out;
+        font-weight: bold;
+        background: rgb(63, 63, 63);
+        border-radius: 10px;
+        padding: 1rem;
+    }
+
+    label {
+        position: absolute;
+        font-size: 0.8rem;
+        top: 50%;
+        left: 0;
+        transform: translate(0, -50%);
+        pointer-events: none;
+        color: #fff;
+        padding: 0rem 1rem;
+    }
+</style>
