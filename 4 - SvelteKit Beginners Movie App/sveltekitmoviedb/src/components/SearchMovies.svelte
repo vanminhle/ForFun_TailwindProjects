@@ -1,6 +1,8 @@
 <script>
   let inputValue = '';
   let active = false;
+  import { goto } from '$app/navigation';
+  import { fly } from 'svelte/transition';
 
   function cancelInactive() {
     if (inputValue) {
@@ -10,11 +12,15 @@
     }
   }
 
+  function submitSearch() {
+    goto('/search/' + inputValue);
+  }
+
 </script>
 
-<form class='search'>
+<form on:submit|preventDefault={submitSearch} class='search'>
   {#if !active}
-    <label for='search_movie'>Search Movies</label>
+    <label in:fly={{y: -10, duration: 500}} out:fly={{y: -10, duration: 500}} for='search_movie'>Search Movies</label>
   {/if}
 
   <input on:blur={cancelInactive} on:focus={() => (active = true )}
@@ -22,7 +28,7 @@
          class={active ? 'selected' : ''} />
 
   {#if inputValue}
-    <button>Search</button>
+    <button in:fly={{x: 20, duration: 500}} out:fly={{x: 0, duration: 500}}>Search</button>
   {/if}
   <!--  <h1>{inputValue}</h1>-->
 </form>
@@ -30,7 +36,6 @@
 <style>
     .search {
         position: relative;
-        width: 30%;
         margin: 1rem;
     }
 

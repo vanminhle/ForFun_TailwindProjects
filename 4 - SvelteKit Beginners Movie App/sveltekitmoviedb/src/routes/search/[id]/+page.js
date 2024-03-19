@@ -2,14 +2,13 @@ const authorization = {
 	method: 'GET',
 	headers: {
 		accept: 'application/json',
-		Authorization:
-			'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmYTFkZTEyZjUwNmJlNjhlNmI2Y2UzNWJlODZmNDViYSIsInN1YiI6IjY1Y2EyMTZiOGQ3N2M0MDE2MjQ2ZDhlOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.kFcbY0voy6CqIQ_9o2g00TzTlS6naDretRqhLHWdMks'
+		Authorization: import.meta.env.VITE_API
 	}
 };
 
 export async function load({ fetch, params }) {
 	const req = await fetch(
-		`https://api.themoviedb.org/3/search/movie/${params.id}?language=en-US`,
+		`https://api.themoviedb.org/3/search/movie?query=${params.id}&include_adult=true&language=en-US`,
 		authorization
 	);
 	const res = await req.json();

@@ -2,8 +2,7 @@ const authorization = {
 	method: 'GET',
 	headers: {
 		accept: 'application/json',
-		Authorization:
-			'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmYTFkZTEyZjUwNmJlNjhlNmI2Y2UzNWJlODZmNDViYSIsInN1YiI6IjY1Y2EyMTZiOGQ3N2M0MDE2MjQ2ZDhlOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.kFcbY0voy6CqIQ_9o2g00TzTlS6naDretRqhLHWdMks'
+		Authorization: import.meta.env.VITE_API
 	}
 };
 
