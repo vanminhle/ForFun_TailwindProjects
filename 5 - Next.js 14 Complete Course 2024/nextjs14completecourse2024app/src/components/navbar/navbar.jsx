@@ -1,5 +1,5 @@
-import Links from '@/components/navbar/links/Links';
-import styles from './Navbar.module.css';
+import Links from '@/components/navbar/links/links';
+import styles from './navbar.module.css';
 
 const Navbar = () => {
   return (
