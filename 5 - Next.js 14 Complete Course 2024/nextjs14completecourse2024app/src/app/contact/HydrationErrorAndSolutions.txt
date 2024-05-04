@@ -1,0 +1,30 @@
+We will have to integrate the diffirent components type into one page 
+(e.g: component rendering on Server, component rendering on Client)
+
+when you using the Client rendering component on Server rendering page, it will not work
+
+const ContactPage = () => {
+	// const [isClient, setIsClient] = useState(false);
+
+	// useEffect(() => {
+	// 	setIsClient(true);
+	// });
+
+->	const a = Math.random();
+->	console.log(a); //not work without 'use client'
+
+	return (
+		<div className={styles.container}>
+			<div className={styles.imgContainer}>
+				<Image src='/contact.png' fill className={styles.img} />
+			</div>
+			<div className={styles.formContainer}>
+->			{isClient && a} //a variables will break the application and will push an error message without 'use  client'
+   
+even useEffect, useState. It will not work in this case
+
+
+SOLUTIONS
+1- create a client rendering components
+2- import dynamic and calling that component by const HydrationTestNoSSR = dynamic(() => import('@/components/hydrationtest'), { ssr: false });
+3- use that component <HydrationTestNoSSR />
