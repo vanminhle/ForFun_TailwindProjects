@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import styles from './contact.module.css';
 // import { useEffect, useState } from 'react';
-import dynamic from 'next/dynamic';
+// import dynamic from 'next/dynamic';
 
 // import HydrationTest from '@/components/hydrationtest';
 
@@ -25,7 +25,7 @@ const ContactPage = () => {
 				<Image src='/contact.png' fill className={styles.img} />
 			</div>
 			<div className={styles.formContainer}>
-				<HydrationTestNoSSR />
+				{/* <HydrationTestNoSSR /> */}
 				{/* {isClient && a} */}
 				<form action='' className={styles.form}>
 					<input type='text' placeholder='Name or surname' />
