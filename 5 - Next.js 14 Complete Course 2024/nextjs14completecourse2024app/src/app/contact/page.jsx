@@ -6,7 +6,7 @@ import styles from './contact.module.css';
 
 // import HydrationTest from '@/components/hydrationtest';
 
-const HydrationTestNoSSR = dynamic(() => import('@/components/hydrationtest'), { ssr: false });
+// const HydrationTestNoSSR = dynamic(() => import('@/components/hydrationtest'), { ssr: false });
 
 const ContactPage = () => {
 	// const [isClient, setIsClient] = useState(false);
@@ -31,7 +31,14 @@ const ContactPage = () => {
 					<input type='text' placeholder='Name or surname' />
 					<input type='text' placeholder='Email Address' />
 					<input type='phone' placeholder='Phone Number' />
-					<textarea name='' id='' cols='30' rows='10' placeholder='Message'></textarea>
+					<textarea
+						className='text-area'
+						name=''
+						id=''
+						cols='30'
+						rows='10'
+						placeholder='Message'
+					></textarea>
 					<button>Send</button>
 				</form>
 			</div>
