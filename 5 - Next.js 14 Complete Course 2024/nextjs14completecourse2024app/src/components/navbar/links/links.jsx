@@ -56,7 +56,7 @@ const Links = () => {
 				onClick={() => setOpen((prev) => !prev)}
 			/>
 			{open && (
-				<div className={styles.mobileLinks}>
+				<div className={styles.mobileLinks} onClick={() => setOpen((prev) => !prev)}>
 					{links.map((link) => (
 						<NavLink item={link} key={link.title} />
 					))}
