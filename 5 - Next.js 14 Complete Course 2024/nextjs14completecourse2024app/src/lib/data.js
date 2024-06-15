@@ -6,6 +6,7 @@
 
 import { Post, User } from './models';
 import { connectToDb } from './utils';
+import { unstable_noStore as noStore } from 'next/cache';
 
 // const posts = [
 // 	{ id: 1, title: 'tile1', body: '........', userId: 1 },
@@ -43,6 +44,7 @@ export const getUser = async (id) => {
 	// // console.log(typeof id); id is a string
 	// return users.find((user) => user.id === parseInt(id));
 
+	noStore();
 	try {
 		connectToDb();
 		const user = await User.findById(id);
