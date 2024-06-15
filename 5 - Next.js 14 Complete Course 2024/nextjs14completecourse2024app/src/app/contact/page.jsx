@@ -8,6 +8,11 @@ import styles from './contact.module.css';
 
 // const HydrationTestNoSSR = dynamic(() => import('@/components/hydrationtest'), { ssr: false });
 
+export const metadata = {
+	title: 'Contact Page',
+	description: 'Contact page description',
+};
+
 const ContactPage = () => {
 	// const [isClient, setIsClient] = useState(false);
 
