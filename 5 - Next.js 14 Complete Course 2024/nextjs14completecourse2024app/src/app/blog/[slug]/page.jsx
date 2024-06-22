@@ -39,11 +39,11 @@ const SinglePostPage = async ({ params }) => {
 
 	return (
 		<div className={styles.container}>
-			{
+			{post.img && (
 				<div className={styles.imgContainer}>
-					<Image src={post.img} alt='' fill className={styles.img} />
+					<Image src={post?.img} alt='' fill className={styles.img} />
 				</div>
-			}
+			)}
 
 			<div className={styles.textContainer}>
 				<h1 className={styles.title}>{post?.title}</h1>
