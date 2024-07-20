@@ -1,31 +1,31 @@
 'use client';
 import styles from './link.module.css';
 import NavLink from '@/components/navbar/links/navLink/navLink';
+import { handleLogout } from '@/lib/action';
 import Image from 'next/image';
 import { useState } from 'react';
 
 const links = [
 	{
 		title: 'Homepage',
-		path: '/'
+		path: '/',
 	},
 	{
 		title: 'About',
-		path: '/about'
+		path: '/about',
 	},
 	{
 		title: 'Contact',
-		path: '/contact'
+		path: '/contact',
 	},
 	{
 		title: 'Blog',
-		path: '/blog'
-	}
+		path: '/blog',
+	},
 ];
-const Links = () => {
+const Links = ({ session }) => {
 	const [open, setOpen] = useState(false);
 
-	const session = true;
 	const isAdmin = true;
 
 	return (
@@ -35,10 +35,12 @@ const Links = () => {
 					// <Link href={link.path} key={link.title}>{link.title}</Link>
 					<NavLink item={link} key={link.title} />
 				))}
-				{session ? (
+				{session?.user ? (
 					<>
-						{isAdmin && <NavLink item={{ title: 'Admin', path: '/Admin' }} />}
-						<button className={styles.logout}>Logout</button>
+						{session.user?.isAdmin && <NavLink item={{ title: 'Admin', path: '/Admin' }} />}
+						<form action={handleLogout}>
+							<button className={styles.logout}>Logout</button>
+						</form>
 					</>
 				) : (
 					<NavLink item={{ title: 'Login', path: '/login' }} />
