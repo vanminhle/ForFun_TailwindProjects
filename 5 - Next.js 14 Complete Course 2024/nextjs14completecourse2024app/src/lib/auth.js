@@ -9,6 +9,7 @@ const login = async (credentials) => {
 	try {
 		connectToDb();
 		const user = await User.findOne({ username: credentials.username });
+		// console.log(user);
 
 		if (!user) {
 			throw new Error('Wrong credentials!');

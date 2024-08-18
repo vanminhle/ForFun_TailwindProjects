@@ -10,7 +10,7 @@ const LoginForm = () => {
 
 	return (
 		<form className={styles.form} action={formAction}>
-			<input type='email' name='email' placeholder='Email' />
+			<input type='username' name='username' placeholder='User Name' />
 			<input type='password' name='password' placeholder='Password' />
 			<button>Login</button>
 			{state?.error}
